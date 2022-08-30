@@ -1,0 +1,399 @@
+@import'./header-footer';
+@import'./variables';
+@import'./responsive';
+
+#loading{
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: white;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    &.active-load{
+        opacity: 1;
+        visibility: visible;
+    }&::before{
+        position: absolute;
+        content: "";
+        top: 50%;
+        margin-top: 5px;
+        left: 30%;
+        height: 3px;
+        background-color: $bcolor;
+        animation-duration: 3s;
+        animation-name: pen;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.75, .04, 0, .86 );
+    }
+
+    @keyframes pen {
+        0%{
+            width: 5rem;
+        }
+        50%{
+            width: 12rem;
+        }
+        100%{
+            width: 5rem;
+        }
+        
+    }
+
+    .onload-logo{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        // transform: translate(-20%, -50%);
+    }
+
+    .load-pen{
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        animation-name: loading;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.75, .04, 0, .86);
+
+        img{
+            width: 50px;
+        }
+
+
+    }
+
+    @keyframes loading {
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(150px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+}
+
+.courses{
+  background-image: url(https://themepure.net/template/educal/educal/assets/img/page-title/page-title.jpg);
+   background-repeat: no-repeat;
+   position: relative;
+   background-size: cover;
+   background-position: center center;
+   width: 100%;
+   height: 450px;
+   .overlay{
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(9, 9, 55, 0.501);
+   }
+   
+   .words-course{
+       top: 50%;
+       position: absolute;
+       left: 10%;
+       color: $wcolor;
+       h1{
+           font-size: 70px;
+           font-weight: bold;
+       }
+       p{
+           font-size: 20px;
+       }
+   }
+}
+
+.showing{
+
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+   
+    z-index: 1000;
+    .long-box{
+        padding-top: 12px;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(232, 232, 232);
+        
+        .left-icon{
+            padding-left: 30px;
+            i{
+                margin-right: 15px;
+            }
+            .color-icon{
+                background-color: $bcolor;
+                padding: 7px 7px;
+                color: $wcolor;
+                border-radius: 1mm;
+            }
+            span{
+                color: rgb(93, 91, 91);
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+        .right-icon{
+            display: flex;
+            justify-content: end;
+            padding-right: 20px;
+            // padding-top: 10px;
+            select{
+               padding: 4px 70px 4px 0px;
+                
+                border: none;
+                border-radius: 1mm;
+                outline: none;
+                
+            }
+        }
+    }
+
+}
+
+.nine-box{
+    margin-top: 50px;
+    width: 100%;
+    top: 100%;
+   .one-box{
+       height: 450px;
+       position: relative;
+       border-radius: 1mm;
+       margin-bottom: 20px;
+       box-shadow: 5px 10px 8px 10px #e2e2e2;
+       .card-img{
+           width: 100%;
+           height: 220px;
+           overflow: hidden;
+           object-fit: cover;
+           img{
+               width: 100%;
+               height: 100%;
+               background-repeat: no-repeat;
+               background-size: cover;
+               transform: scale(1);
+               transition: .3s ease;
+               &:hover{
+                   transform: scale(1.1);
+               }
+           }
+           
+       }
+
+       .design{
+        position: absolute;
+        top: 5%;
+        left: 7%;
+        background-color: #B128FF;
+        color: $wcolor;
+        border-radius: 1mm;
+        padding: 2px 5px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .book{
+        margin-top: 20px;
+        .book-icon{
+            margin-left: 20px;
+            color: grey;
+        }
+        .star{
+            margin-right: 20px;
+            i{
+                color: orange;
+            }
+            span{
+                color: grey;
+            }
+        }
+    }
+
+    .mid-word{
+        h4{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            transition: .3s ease;
+            cursor: pointer;
+            &:hover{
+                color: $bcolor;
+            }
+        }
+    }
+
+    .teacher{
+        margin-top: 20px;
+        img{
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 100%;
+        }
+        span{
+            font-weight: 500;
+            color: rgb(125, 123, 123);
+        }
+    }
+   }
+   .free{
+       margin-top: 20px;
+       padding-top: 10px;
+       border-top: 1px solid rgb(240, 240, 240);
+       .free-word{
+           margin-left: 20px;
+           color: #B128FF;
+       }
+       .details{
+           margin-right: 20px;
+           transition: .3s ease;
+           cursor: pointer;
+           &:hover{
+               color: $bcolor;
+           }
+           span{
+               font-weight: 500;
+           }
+       }
+   }
+
+   .one-two{
+       display: flex;
+       margin-top: 25px;
+       .span-1, p{
+           margin-right: 20px;
+       }
+       .span-1{
+           font-weight: 500;
+           i{
+               margin-right: 10px;
+               font-size: 12px;
+           }
+       }
+       .span-2{
+        font-weight: 500;
+           i{
+               margin-left: 10px;
+               font-size: 12px;
+           }
+       }
+       .span-1, .span-2{
+           cursor: pointer;
+           transition: .3s ease;
+           &:hover{
+               color: $bcolor;
+           }
+       }
+
+       p{
+           cursor: pointer;
+        font-weight: 500;
+        padding: 5px 15px;
+        border: 2px solid rgb(205, 205, 205);
+        border-radius: 1mm;
+        transition: .3s ease;
+         &:hover{
+            background-color: $bcolor;
+            border-color: $bcolor;
+            color: $wcolor;
+
+         }
+       }
+       .mid-p{
+           background-color: $bcolor;
+           border-color: $bcolor;
+           color: $wcolor;
+       }
+     
+       
+   }
+}
+
+.blue{
+   
+    height: 70vh;
+    position: relative;
+    width: 100%;
+    .blue-2{
+        
+        
+        overflow: hidden;
+        position: absolute;
+        bottom: -30%;
+        left: 5%;
+        width: 90%;
+        height: 200px;
+        background-color: #2B4EFF;
+        border-radius: 2mm;
+        .start-btn{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            border-bottom-left-radius: 75%;
+            overflow: hidden;
+            background-color: #FF7C54;
+            button{
+                border: none;
+                border-radius: 1mm;
+                padding: 15px 46px;
+                font-weight: 500;
+                transition: .3s ease;
+                &:hover{
+                    box-shadow: 5px 10px 10px 10px #413e3e46;
+                }
+            }
+        }
+        .g-star{
+            padding: 50px 30px;
+            background-color: #2B4EFF;
+            
+            
+            h1{
+                width: 100%;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+#scrool-top{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: .4s ease;
+    &.active-scrool{
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+    .onscrool{
+        border: 2px solid $bcolor;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        position: relative;
+        i{
+            position: absolute;
+            font-size: 18px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $bcolor;
+        }
+    }
+}
+
+    
